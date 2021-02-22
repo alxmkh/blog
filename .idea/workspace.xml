@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c5b612c5-2513-492c-acf5-eaa91fb0bda6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/items.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/dummy.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/favoriteBlog.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/items_api.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/mostBlogs.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/mostLikes.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/totalLikes.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/list_helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/logger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/middleware.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mtGOSovWLRYLpBuGg4uGbNWTna" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/controllers" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/controllers" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.all test">
+    <configuration name="all test" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/tests/items_api.test.js" />
+      <test-names>
+        <test-name value="all test" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="all test.test delete requests.delete post" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/items_api.test.js" />
+      <test-names>
+        <test-name value="all test" />
+        <test-name value="test delete requests" />
+        <test-name value="delete post" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="all test.test post requests.a valid post can be added " type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/items_api.test.js" />
+      <test-names>
+        <test-name value="all test" />
+        <test-name value="test post requests" />
+        <test-name value="a valid post can be added " />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="all test.test post requests.add new post without auth" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/items_api.test.js" />
+      <test-names>
+        <test-name value="all test" />
+        <test-name value="test post requests" />
+        <test-name value="add new post without auth" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="all test.test post requests.add new post without likes" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/items_api.test.js" />
+      <test-names>
+        <test-name value="all test" />
+        <test-name value="test post requests" />
+        <test-name value="add new post without likes" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.all test" />
+        <item itemvalue="Jest.all test.test post requests.add new post without auth" />
+        <item itemvalue="Jest.all test.test delete requests.delete post" />
+        <item itemvalue="Jest.all test.test post requests.add new post without likes" />
+        <item itemvalue="Jest.all test.test post requests.a valid post can be added " />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5b612c5-2513-492c-acf5-eaa91fb0bda6" name="Default Changelist" comment="" />
+      <created>1610305441805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610305441805</updated>
+      <workItem from="1610305443086" duration="4514000" />
+      <workItem from="1610989500105" duration="9293000" />
+      <workItem from="1611517132855" duration="4000" />
+      <workItem from="1611517157134" duration="16973000" />
+      <workItem from="1612121615246" duration="6420000" />
+      <workItem from="1613629703241" duration="3736000" />
+      <workItem from="1613935942094" duration="12948000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1780" y="128" width="1720" height="852" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1611682264873">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1780" y="128" width="1720" height="852" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/1680.0.1920.1080/0.25.1680.960@1680.0.1920.1080" timestamp="1611682264873" />
+    <state width="1899" height="298" key="GridCell.Tab.0.bottom" timestamp="1614000605524">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="298" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1614000605524" />
+    <state width="1899" height="289" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1613849501956" />
+    <state width="1899" height="358" key="GridCell.Tab.0.bottom/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891341" />
+    <state width="1899" height="298" key="GridCell.Tab.0.center" timestamp="1614000605521">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="298" key="GridCell.Tab.0.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1614000605521" />
+    <state width="1899" height="289" key="GridCell.Tab.0.center/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1613849501953" />
+    <state width="1899" height="358" key="GridCell.Tab.0.center/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891340" />
+    <state width="1899" height="298" key="GridCell.Tab.0.left" timestamp="1614000605520">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="298" key="GridCell.Tab.0.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1614000605520" />
+    <state width="1899" height="289" key="GridCell.Tab.0.left/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1613849501952" />
+    <state width="1899" height="358" key="GridCell.Tab.0.left/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891340" />
+    <state width="1899" height="298" key="GridCell.Tab.0.right" timestamp="1614000605522">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="298" key="GridCell.Tab.0.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1614000605522" />
+    <state width="1899" height="289" key="GridCell.Tab.0.right/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1613849501955" />
+    <state width="1899" height="358" key="GridCell.Tab.0.right/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891341" />
+    <state width="1899" height="358" key="GridCell.Tab.1.bottom" timestamp="1612040891342">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914212" />
+    <state width="1899" height="370" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545161" />
+    <state width="1899" height="358" key="GridCell.Tab.1.bottom/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891342" />
+    <state width="1899" height="358" key="GridCell.Tab.1.center" timestamp="1612040891342">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.1.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914210" />
+    <state width="1899" height="370" key="GridCell.Tab.1.center/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545159" />
+    <state width="1899" height="358" key="GridCell.Tab.1.center/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891342" />
+    <state width="1899" height="358" key="GridCell.Tab.1.left" timestamp="1612040891341">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.1.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914210" />
+    <state width="1899" height="370" key="GridCell.Tab.1.left/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545159" />
+    <state width="1899" height="358" key="GridCell.Tab.1.left/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891341" />
+    <state width="1899" height="358" key="GridCell.Tab.1.right" timestamp="1612040891342">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.1.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914211" />
+    <state width="1899" height="370" key="GridCell.Tab.1.right/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545160" />
+    <state width="1899" height="358" key="GridCell.Tab.1.right/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891342" />
+    <state width="1899" height="358" key="GridCell.Tab.2.bottom" timestamp="1612040891343">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.2.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914214" />
+    <state width="1899" height="370" key="GridCell.Tab.2.bottom/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545163" />
+    <state width="1899" height="358" key="GridCell.Tab.2.bottom/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891343" />
+    <state width="1899" height="358" key="GridCell.Tab.2.center" timestamp="1612040891343">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.2.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914213" />
+    <state width="1899" height="370" key="GridCell.Tab.2.center/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545162" />
+    <state width="1899" height="358" key="GridCell.Tab.2.center/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891343" />
+    <state width="1899" height="358" key="GridCell.Tab.2.left" timestamp="1612040891342">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.2.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914212" />
+    <state width="1899" height="370" key="GridCell.Tab.2.left/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545161" />
+    <state width="1899" height="358" key="GridCell.Tab.2.left/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891342" />
+    <state width="1899" height="358" key="GridCell.Tab.2.right" timestamp="1612040891343">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.2.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914213" />
+    <state width="1899" height="370" key="GridCell.Tab.2.right/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545163" />
+    <state width="1899" height="358" key="GridCell.Tab.2.right/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891343" />
+    <state width="1899" height="358" key="GridCell.Tab.3.bottom" timestamp="1612040891344">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.3.bottom/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914216" />
+    <state width="1899" height="370" key="GridCell.Tab.3.bottom/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545167" />
+    <state width="1899" height="358" key="GridCell.Tab.3.bottom/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891344" />
+    <state width="1899" height="358" key="GridCell.Tab.3.center" timestamp="1612040891344">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.3.center/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914215" />
+    <state width="1899" height="370" key="GridCell.Tab.3.center/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545165" />
+    <state width="1899" height="358" key="GridCell.Tab.3.center/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891344" />
+    <state width="1899" height="358" key="GridCell.Tab.3.left" timestamp="1612040891343">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.3.left/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914214" />
+    <state width="1899" height="370" key="GridCell.Tab.3.left/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545164" />
+    <state width="1899" height="358" key="GridCell.Tab.3.left/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891343" />
+    <state width="1899" height="358" key="GridCell.Tab.3.right" timestamp="1612040891344">
+      <screen x="1680" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1899" height="358" key="GridCell.Tab.3.right/1680.0.1920.1080/0.0.1680.1050@1680.0.1920.1080" timestamp="1611675914216" />
+    <state width="1899" height="370" key="GridCell.Tab.3.right/1680.0.1920.1080/0.25.1680.1025@1680.0.1920.1080" timestamp="1611428545166" />
+    <state width="1899" height="358" key="GridCell.Tab.3.right/1680.25.1920.1055/0.25.1680.960@1680.25.1920.1055" timestamp="1612040891344" />
+  </component>
+</project>
