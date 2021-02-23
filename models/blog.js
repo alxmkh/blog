@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const blogSchema = new mongoose.Schema({
+const blogSchema = mongoose.Schema({
     title: String,
     author: String,
     url: String,
     likes: Number,
-    user: {
+    user:  {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }

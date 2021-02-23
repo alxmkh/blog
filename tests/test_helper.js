@@ -1,37 +1,38 @@
-const Item = require('../models/item')
+const Blogs = require('../models/blog')
 const User = require('../models/user')
 
-const initialItems = [
+const initialBlogs = [
     {
-        title : 'My first test post',
-        author: 'Test Ivan',
-        url: 'www.testgoogle.com',
-        likes: 1,
+        title: 'React patterns',
+        author: 'Michael Chan',
+        url: 'https://reactpatterns.com/',
+        likes: 7,
     },
     {
-        title : 'My second test post',
-        author: 'Test Alexey',
-        url: 'www.testyandex.com',
-        likes: 2,
-    }
+        title: 'Go To Statement Considered Harmful',
+        author: 'Edsger W. Dijkstra',
+        url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+        likes: 5,
+    },
+    {
+        title: 'Canonical string reduction',
+        author: 'Edsger W. Dijkstra',
+        url: 'http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html',
+        likes: 12,
+    },
 ]
 
 const nonExistingId = async () => {
-    const item = new Item({
-        title : 'willremovethissoon',
-        author: 'willremovethissoon',
-        url: 'willremovethissoon',
-        likes: 0,
-    })
-    await item.save()
-    await item.remove()
+    const blog = new Blogs({ content: 'willremovethissoon' })
+    await blog.save()
+    await blog.remove()
 
-    return item._id.toString()
+    return blog._id.toString()
 }
 
-const notesInDb = async () => {
-    const items = await Item.find({})
-    return items.map(item => item.toJSON())
+const blogsInDb = async () => {
+    const blogs = await Blogs.find({})
+    return blogs.map(blog => blog.toJSON())
 }
 
 const usersInDb = async () => {
@@ -40,5 +41,5 @@ const usersInDb = async () => {
 }
 
 module.exports = {
-    initialItems, nonExistingId, notesInDb, usersInDb
+    initialBlogs, nonExistingId, blogsInDb, usersInDb
 }
