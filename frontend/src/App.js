@@ -1,169 +1,112 @@
 import React, {useState, useEffect} from 'react'
+
 import Blog from './components/Blog'
-import blogService from './services/blogs'
-import loginService from './services/login'
-import Notification from "./components/Notification";
-import NewBlogForm from "./components/NewBlogForm";
+import Notification from './components/Notification'
+import NewBlogForm from './components/NewBlogForm'
+import Users from './components/Users'
+import Header from './components/Header'
+import LoginForm from './components/LoginForm'
+
+import {initBlogsAC} from './reducers/BlogReducer'
+import {useDispatch, useSelector} from 'react-redux'
+import {setUserAC} from './reducers/LoginReducer'
+import {Button, Container, Row} from 'react-bootstrap'
+
+import {
+    Switch,
+    Route,
+    Redirect,
+    useRouteMatch,
+    Link,
+} from 'react-router-dom'
+
+const blogStyle = {
+    paddingTop: 10,
+    paddingLeft: 2,
+    border: 'solid',
+    borderWidth: 1,
+    marginBottom: 5,
+}
 
 const App = () => {
-    const [blogs, setBlogs] = useState([])
-    const [errorMessage, setErrorMessage] = useState(null)
-    const [infoMessage, setInfoMessage] = useState(null)
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [user, setUser] = useState(null)
+
     const [isVisibleForm, setIsVisibleForm] = useState(false)
 
-    useEffect(() => {
-        blogService.getAll().then(blogs => {
-            setBlogs(blogs)
-        })
-    }, [])
+    const blogs = useSelector(state => state.blog)
+    const notification = useSelector(state => state.notification.notification)
+    const user = useSelector(state => state.user)
+
+    const dispatch = useDispatch()
+
+    const match = useRouteMatch('/blogs/:id')
+
+    const currentBlog = match
+        ? blogs.find(blog => blog.id === match.params.id)
+        : null
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedBlogApp')
         if (loggedUserJSON) {
+            dispatch(initBlogsAC())
             const user = JSON.parse(loggedUserJSON)
-            setUser(user)
-            blogService.setToken(user.token)
+            dispatch(setUserAC(user))
         }
+        // disable useEffect warning
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    const addNote = (blogObject, author, title) => {
-        blogService.create(blogObject).then(response => {
-            setBlogs(blogs.concat(response))
-            setInfoMessage(`a new blog ${title} by ${author}`)
-            setIsVisibleForm(!isVisibleForm)
-            setTimeout(() => {
-                setInfoMessage(null)
-            }, 5000)
-        })
-    }
 
     const showOrHideForm = () => {
         setIsVisibleForm(!isVisibleForm)
     }
 
-    const handleLogin = async (event) => {
-        event.preventDefault()
-        try {
-            const user = await loginService.login({
-                username, password,
-            })
-            window.localStorage.setItem(
-                'loggedBlogApp', JSON.stringify(user)
-            )
-            blogService.setToken(user.token)
-            setUser(user)
-            setUsername('')
-            setPassword('')
-        } catch (exception) {
-            setErrorMessage(exception.response.data.error)
-            setTimeout(() => {
-                setErrorMessage(null)
-            }, 5000)
-        }
-    }
-
-    const loginForm = () => (
-        <form onSubmit={handleLogin}>
-            <h2>log in to application</h2>
-            <Notification message={errorMessage} type={'error'}/>
-            <div>
-                username
-                <input
-                    id='username'
-                    type="text"
-                    value={username}
-                    name="Username"
-                    onChange={({target}) => setUsername(target.value)}
-                />
-            </div>
-            <div>
-                password
-                <input
-                    id='password'
-                    type="password"
-                    value={password}
-                    name="Password"
-                    onChange={({target}) => setPassword(target.value)}
-                />
-            </div>
-            <button id='login-button' type="submit">login</button>
-        </form>
-    )
-
-    const getLogout = () => {
-        window.localStorage.removeItem('loggedBlogApp')
-        setUser(null)
-    }
-
-    const updateLikes = (id, updatedObject) => {
-        try {
-            blogService.update(id, updatedObject).then((response) => {
-                const index = blogs.findIndex(el => el.id === id)
-                blogs[index].likes = response.likes;
-                setBlogs(blogs.concat([]))
-                // blogService.getAll().then(blogs =>
-                //     setBlogs(blogs)
-                // )
-            })
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-    const deleteBlog = (id) => {
-        try {
-
-            blogService.deleteBlog(id).then(() => {
-                blogService.getAll().then(blogs =>
-                    setBlogs(blogs)
-                )
-            })
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-    const compare = (a, b) => {
-        let comparison = 1;
-        if (a.likes > b.likes) {
-            comparison = 0;
-        } else if (a.likes < b.likes) {
-            comparison = -1;
-        }
-        return comparison;
-    }
-
     return (
-        <div>
+        <Container>
 
-            {user === null ?
-                loginForm() :
-                <div>
-                    <h2>blogs</h2>
-                    {infoMessage
-                        ? <Notification message={infoMessage} type={'info'}/>
-                        : null
-                    }
+            <Row className="justify-content-md-center pt-5">
+                <Switch>
+                    <Route path='/users'>
+                        {user === null
+                            ? <Redirect to='/'/>
+                            : <Users/>
+                        }
+                    </Route>
+                    <Route path='/'>
+                        {user === null || user === ''
+                            ? <LoginForm/>
+                            : <div>
+                                {notification
+                                    ? <Notification message={notification} type={'info'}/>
+                                    : null
+                                }
 
-                    <p>{user.name} logged in <button onClick={getLogout}>logout</button></p>
-                    {
-                        isVisibleForm
-                            ? <NewBlogForm createNewBlog={addNote} setVisibleForm={showOrHideForm}/>
-                            : <button onClick={setIsVisibleForm}>create new blog</button>
-                    }
-                    <div id='idDivElementForBlogList'>
-                        {blogs.sort(compare).map(blog =>
-                            <Blog key={blog.id} blog={blog} updateLikes={updateLikes} login={user.name} deleteBlog={deleteBlog}/>
-                        ).reverse()}
-                    </div>
-
-                </div>
-            }
-        </div>
-    )
+                                {
+                                    currentBlog
+                                        ? <Blog key={currentBlog.id} blog={currentBlog} user={user}/>
+                                        : <>
+                                            <Header/>
+                                            <div id='idDivElementForBlogList'>
+                                                <h2>blogs</h2>
+                                                {
+                                                    isVisibleForm
+                                                        ? <NewBlogForm setVisibleForm={showOrHideForm}/>
+                                                        : <Button variant={'primary'} onClick={setIsVisibleForm}>create new
+                                                            blog</Button>
+                                                }
+                                                {blogs.map(blog =>
+                                                    <ul style={blogStyle} key={blog.id}>
+                                                        <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
+                                                    </ul>,
+                                                )}
+                                            </div>
+                                        </>
+                                }
+                            </div>
+                        }
+                    </Route>
+                </Switch>
+            </Row>
+        </Container>
+)
 }
 
 export default App

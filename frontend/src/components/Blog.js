@@ -1,76 +1,89 @@
-import React, {useState} from 'react'
-import PropTypes from "prop-types";
-import NewBlogForm from "./NewBlogForm";
+import React from 'react'
+import {initBlogsWithoutSortAC, voteForAC} from '../reducers/BlogReducer'
+import {useDispatch} from 'react-redux'
+import Header from './Header'
+import Comments from './Comments'
 
-const Blog = ({blog, updateLikes, login, deleteBlog}) => {
-    const [isHidden, setIsHidden] = useState(false)
-    const [buttonName, setButtonName] = useState('view')
-    const blogStyle = {
-        paddingTop: 10,
-        paddingLeft: 2,
-        border: 'solid',
-        borderWidth: 1,
-        marginBottom: 5
-    }
+const Blog = ({blog, user}) => {
+    // const [isHidden, setIsHidden] = useState(false)
+    // const [buttonName, setButtonName] = useState('view')
 
-    const delBlog = () => {
-        const result = window.confirm(`Remove blog ${blog.title} ${blog.user.name}`);
-        if (result) {
-            deleteBlog(blog.id)
-        }
+    const dispatch = useDispatch()
 
-    }
+    // const delBlog = () => {
+    //     const result = window.confirm(`Remove blog ${blog.title} ${blog.user.name}`);
+    //     try {
+    //         if (result) {
+    //             dispatch(removeBlogAC(blog.id))
+    //         }
+    //     } catch (e) {
+    //         console.error(e)
+    //     }
+    // }
 
-    const blogInfo = () => (
-        <>
-            <div>{blog.url}</div>
-            <div id='idLikeDiv'><span> {blog.likes} </span><button id='like-button' onClick={increaseLike}>like</button></div>
-            <div>{blog.user.name}</div>
-            <div>
-                {
-                    login === blog.user.name
-                    ? <button id='idDeleteBlogButton' onClick={delBlog}>remove</button>
-                    : ''
-                }
-
-            </div>
-        </>
-    )
+    // const blogInfo = () => (
+    //     <>
+    //         <div>{blog.url}</div>
+    //         <div id='idLikeDiv'><span> {blog.likes} </span>
+    //             <button id='like-button' onClick={increaseLike}>like</button>
+    //         </div>
+    //         <div>{blog.user.name}</div>
+    //         <div>
+    //             {
+    //                 login === blog.user.name
+    //                     ? <button id='idDeleteBlogButton' onClick={delBlog}>remove</button>
+    //                     : ''
+    //             }
+    //
+    //         </div>
+    //     </>
+    // )
 
     const increaseLike = () => {
-        const updatedObject = {
-            user: blog.user.id,
-            likes: blog.likes + 1,
-            author: blog.user.name,
-            title: blog.title,
-            url: blog.url
+        try {
+            const updatedObject = {
+                user: blog.user.id,
+                likes: blog.likes + 1,
+                author: blog.user.name,
+                title: blog.title,
+                url: blog.url,
+            }
+            dispatch(voteForAC(blog.id, updatedObject))
+            dispatch(initBlogsWithoutSortAC())
+        } catch (e) {
+            console.error(e)
         }
-        updateLikes(blog.id, updatedObject)
-
     }
 
-    const changeHidden = () => {
-        setIsHidden(!isHidden)
-        setButtonName(buttonName === 'hidden' ? 'view' : 'hidden')
+    // const changeHidden = () => {
+    //     setIsHidden(!isHidden)
+    //     setButtonName(buttonName === 'hidden' ? 'view' : 'hidden')
+    // }
+
+    if (!blog) {
+        return null
     }
 
     return (
-        <div style={blogStyle}>
-            {blog.title} {blog.author} {<button id='view-hidden-button' onClick={changeHidden}>{buttonName}</button>}
-            {
-                isHidden
-                    ? blogInfo()
-                    : ''
-            }
-        </div>
+        <>
+            {/*<div style={blogStyle}>*/}
+            {/*{blog.title} {blog.author} {<button id='view-hidden-button' onClick={changeHidden}>*/}
+            {/*{buttonName}*/}
+            {/*</button>}*/}
+            {/*{*/}
+            {/*    isHidden*/}
+            {/*        ? blogInfo()*/}
+            {/*        : ''*/}
+            {/*}*/}
+            {/*</div>*/}
+            <Header/>
+            <h2>{blog.title}</h2>
+            <div><a href="#">{blog.url}</a></div>
+            <div>{blog.likes} likes <button id='like-button' onClick={increaseLike}>like</button></div>
+            <div>added by {blog.author}</div>
+            <Comments comments={blog.comments} id={blog.id}/>
+        </>
     )
-}
-
-NewBlogForm.propTypes = {
-    updateLikes: PropTypes.func.isRequired,
-    deleteBlog: PropTypes.func.isRequired,
-    login: PropTypes.string.isRequired,
-    blog: PropTypes.object.isRequired,
 }
 
 export default Blog

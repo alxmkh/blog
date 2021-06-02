@@ -1,22 +1,26 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import {addBlogAC} from "../reducers/BlogReducer"
+import {createNotificationAction} from "../reducers/NotificationReducer"
+import {useDispatch} from "react-redux"
 
-const NewBlogForm = ({createNewBlog, setVisibleForm}) => {
-    const [newTitle, setNewTitle] = useState('')
-    const [newAuthor, setNewAuthor] = useState('')
-    const [newUrl, setNewUrl] = useState('')
+const NewBlogForm = ({setVisibleForm}) => {
+    const [title, setTitle] = useState('')
+    const [author, setAuthor] = useState('')
+    const [url, setUrl] = useState('')
 
+    const dispatch = useDispatch()
 
     const handleTitleChange = (event) => {
-        setNewTitle(event.target.value)
+        setTitle(event.target.value)
     }
 
     const handleAuthorChange = (event) => {
-        setNewAuthor(event.target.value)
+        setAuthor(event.target.value)
     }
 
     const handleUrlChange = (event) => {
-        setNewUrl(event.target.value)
+        setUrl(event.target.value)
     }
 
     const showOrHideForm = () => {
@@ -25,14 +29,15 @@ const NewBlogForm = ({createNewBlog, setVisibleForm}) => {
 
     const addNote = (event) => {
         event.preventDefault()
-        createNewBlog({
-            title: newTitle,
-            author: newAuthor,
-            url: newUrl,
-        }, newAuthor, newTitle)
-        setNewAuthor('')
-        setNewTitle('')
-        setNewUrl('')
+        dispatch(addBlogAC({
+            title: title,
+            author: author,
+            url: url,
+        }))
+        dispatch(createNotificationAction(`a new blog ${title} by ${author}`,3000))
+        setAuthor('')
+        setTitle('')
+        setUrl('')
     }
 
     return (
@@ -42,19 +47,19 @@ const NewBlogForm = ({createNewBlog, setVisibleForm}) => {
                 <div>title: <input
                     id='title'
                     type='text'
-                    value={newTitle}
+                    value={title}
                     name='Title'
                     onChange={handleTitleChange}/></div>
                 <div>author: <input
                     id='author'
                     type='text'
-                    value={newAuthor}
+                    value={author}
                     name='Author'
                     onChange={handleAuthorChange}/></div>
                 <div>url: <input
                     id='url'
                     type='text'
-                    value={newUrl}
+                    value={url}
                     name='Url'
                     onChange={handleUrlChange}/></div>
                 <div>
@@ -72,8 +77,7 @@ const NewBlogForm = ({createNewBlog, setVisibleForm}) => {
 }
 
 NewBlogForm.propTypes = {
-    setVisibleForm: PropTypes.func.isRequired,
-    createNewBlog: PropTypes.func.isRequired,
+    setVisibleForm: PropTypes.func.isRequired
 }
 
 export default NewBlogForm
